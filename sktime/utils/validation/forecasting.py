@@ -93,9 +93,9 @@ def check_y(y, allow_empty=False, allow_constant=True):
         If y is an invalid input
     """
     y = check_series(
-        y, enforce_univariate=True, allow_empty=allow_empty, allow_numpy=False
+        y, enforce_univariate=False, allow_empty=allow_empty, allow_numpy=False
     )
-
+    
     if not allow_constant:
         if np.all(y == y.iloc[0]):
             raise ValueError("All values of `y` are the same.")
